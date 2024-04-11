@@ -4,38 +4,38 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import apicampeonatosfifa.apicampeonatosfifa.core.entidades.Seleccion;
-import apicampeonatosfifa.apicampeonatosfifa.core.interfaces.repositorios.ISeleccionRepositorio;
-import apicampeonatosfifa.apicampeonatosfifa.core.interfaces.servicios.ISeleccionServicio;
+import apicampeonatosfifa.apicampeonatosfifa.core.entidades.Campeonato;
+import apicampeonatosfifa.apicampeonatosfifa.core.interfaces.repositorios.ICampeonatoRepositorio;
+import apicampeonatosfifa.apicampeonatosfifa.core.interfaces.servicios.ICampeonatoServicio;
 
 @Service
-public class SeleccionServicio implements ISeleccionServicio {
+public class CampeonatoServicio implements ICampeonatoServicio {
 
-    private ISeleccionRepositorio repositorio;
+    private ICampeonatoRepositorio repositorio;
 
-    public SeleccionServicio(ISeleccionRepositorio repositorio) {
+    public CampeonatoServicio(ICampeonatoRepositorio repositorio) {
         this.repositorio = repositorio;
     }
 
     @Override
-    public List<Seleccion> listar() {
+    public List<Campeonato> listar() {
         return repositorio.findAll();
     }
 
     @Override
-    public Seleccion obtener(int id) {
+    public Campeonato obtener(int id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'obtener'");
     }
 
     @Override
-    public Seleccion agregar(Seleccion seleccion) {
+    public Campeonato agregar(Campeonato Campeonato) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'agregar'");
     }
 
     @Override
-    public Seleccion modificar(Seleccion seleccion) {
+    public Campeonato modificar(Campeonato Campeonato) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'modificar'");
     }
@@ -45,5 +45,5 @@ public class SeleccionServicio implements ISeleccionServicio {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'eliminar'");
     }
-    
+
 }
