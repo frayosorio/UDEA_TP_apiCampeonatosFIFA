@@ -1,6 +1,7 @@
 package apicampeonatosfifa.apicampeonatosfifa.aplicacion;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -24,26 +25,40 @@ public class CampeonatoServicio implements ICampeonatoServicio {
 
     @Override
     public Campeonato obtener(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'obtener'");
+        Optional<Campeonato> CampeonatoEncontrada = repositorio.findById(id);
+        return CampeonatoEncontrada.isEmpty() ? null : CampeonatoEncontrada.get();
     }
 
     @Override
-    public Campeonato agregar(Campeonato Campeonato) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agregar'");
+    public Campeonato agregar(Campeonato campeonato) {
+        campeonato.setId(0);
+        return repositorio.save(campeonato);
     }
 
     @Override
-    public Campeonato modificar(Campeonato Campeonato) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'modificar'");
+    public Campeonato modificar(Campeonato campeonato) {
+        Optional<Campeonato> campeonatoEncontrado = repositorio.findById(campeonato.getId());
+        if (!campeonatoEncontrado.isEmpty()) {
+            return repositorio.save(campeonato);
+        } else {
+            return null;
+        }
     }
 
     @Override
     public boolean eliminar(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminar'");
+        try {
+            repositorio.deleteById(id);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+
+    }
+
+    @Override
+    public List<Campeonato> buscar(String nombre) {
+        return repositorio.buscar(nombre);
     }
 
 }

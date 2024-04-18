@@ -10,6 +10,8 @@ public interface ISeleccionServicio {
 
     public Seleccion obtener(int id);
 
+    public List<Seleccion> buscar(String nombre);
+
     public Seleccion agregar(Seleccion seleccion);
 
     public Seleccion modificar(Seleccion seleccion);

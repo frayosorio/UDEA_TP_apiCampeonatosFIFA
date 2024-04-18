@@ -10,6 +10,8 @@ public interface ICampeonatoServicio {
 
     public Campeonato obtener(int id);
 
+    public List<Campeonato> buscar(String nombre);
+
     public Campeonato agregar(Campeonato Campeonato);
 
     public Campeonato modificar(Campeonato Campeonato);
