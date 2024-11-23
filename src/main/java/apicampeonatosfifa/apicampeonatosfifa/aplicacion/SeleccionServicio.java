@@ -2,6 +2,7 @@ package apicampeonatosfifa.apicampeonatosfifa.aplicacion;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import apicampeonatosfifa.apicampeonatosfifa.core.interfaces.repositorios.ISeleccionRepositorio;
@@ -19,7 +20,7 @@ public class SeleccionServicio implements ISeleccionServicio {
 
     @Override
     public List<Seleccion> listar() {
-        return repositorio.findAll();
+        return repositorio.findAll(Sort.by("nombre"));
     }
 
     @Override
