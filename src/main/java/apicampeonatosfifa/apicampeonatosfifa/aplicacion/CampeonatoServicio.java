@@ -3,11 +3,13 @@ package apicampeonatosfifa.apicampeonatosfifa.aplicacion;
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import apicampeonatosfifa.apicampeonatosfifa.core.interfaces.repositorios.ICampeonatoRepositorio;
 import apicampeonatosfifa.apicampeonatosfifa.core.interfaces.servicios.ICampeonatoServicio;
 import apicampeonatosfifa.apicampeonatosfifa.dominio.entidades.Campeonato;
 
+@Service
 public class CampeonatoServicio implements ICampeonatoServicio {
 
     private ICampeonatoRepositorio repositorio;
