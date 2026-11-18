@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import campeonatosfifa.api.core.repositorios.IFaseRepositorio;
@@ -15,6 +16,7 @@ import campeonatosfifa.api.infraestructura.persistencia.repositorios.jpa.IFaseRe
 @Component
 public class FaseRepositorio implements IFaseRepositorio {
 
+    @Autowired
     private final IFaseRepositorioJpa repositorio;
 
     FaseRepositorio(IFaseRepositorioJpa repositorio) {

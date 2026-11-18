@@ -18,30 +18,18 @@ public class Encuentro {
 
     private LocalDate fecha;
 
-    private int goles1;
+    private Integer goles1;
 
-    private int goles2;
+    private Integer goles2;
 
-    private int penales1;
+    private Integer penales1;
 
-    private int penales2;
+    private Integer penales2;
 
     public Encuentro() {
     }
 
-    public Encuentro(
-            int id,
-            Seleccion seleccion1,
-            Seleccion seleccion2,
-            Fase fase,
-            Campeonato campeonato,
-            Estadio estadio,
-            LocalDate fecha,
-            int goles1,
-            int goles2,
-            int penales1,
-            int penales2) {
-
+    public Encuentro(int id, Seleccion seleccion1, Seleccion seleccion2, Fase fase, Campeonato campeonato, Estadio estadio, LocalDate fecha, Integer goles1, Integer goles2, Integer penales1, Integer penales2) {
         this.id = id;
         this.seleccion1 = seleccion1;
         this.seleccion2 = seleccion2;
@@ -111,35 +99,35 @@ public class Encuentro {
         this.fecha = fecha;
     }
 
-    public int getGoles1() {
+    public Integer getGoles1() {
         return goles1;
     }
 
-    public void setGoles1(int goles1) {
+    public void setGoles1(Integer goles1) {
         this.goles1 = goles1;
     }
 
-    public int getGoles2() {
+    public Integer getGoles2() {
         return goles2;
     }
 
-    public void setGoles2(int goles2) {
+    public void setGoles2(Integer goles2) {
         this.goles2 = goles2;
     }
 
-    public int getPenales1() {
+    public Integer getPenales1() {
         return penales1;
     }
 
-    public void setPenales1(int penales1) {
+    public void setPenales1(Integer penales1) {
         this.penales1 = penales1;
     }
 
-    public int getPenales2() {
+    public Integer getPenales2() {
         return penales2;
     }
 
-    public void setPenales2(int penales2) {
+    public void setPenales2(Integer penales2) {
         this.penales2 = penales2;
     }
 }

@@ -20,9 +20,9 @@ public class EncuentroEntidad {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_encuentro")
     @SequenceGenerator(
-        name = "secuencia_encuentro",
-        sequenceName = "secuencia_encuentro",
-        allocationSize = 1
+            name = "secuencia_encuentro",
+            sequenceName = "secuencia_encuentro",
+            allocationSize = 1
     )
     private int id;
 
@@ -50,33 +50,21 @@ public class EncuentroEntidad {
     private LocalDate fecha;
 
     @Column(name = "goles1")
-    private int goles1;
+    private Integer goles1;
 
     @Column(name = "goles2")
-    private int goles2;
+    private Integer goles2;
 
     @Column(name = "penales1")
-    private int penales1;
+    private Integer penales1;
 
     @Column(name = "penales2")
-    private int penales2;
+    private Integer penales2;
 
     public EncuentroEntidad() {
     }
 
-    public EncuentroEntidad(
-            int id,
-            SeleccionEntidad seleccion1,
-            SeleccionEntidad seleccion2,
-            FaseEntidad fase,
-            CampeonatoEntidad campeonato,
-            EstadioEntidad estadio,
-            LocalDate fecha,
-            int goles1,
-            int goles2,
-            int penales1,
-            int penales2) {
-
+    public EncuentroEntidad(int id, SeleccionEntidad seleccion1, SeleccionEntidad seleccion2, FaseEntidad fase, CampeonatoEntidad campeonato, EstadioEntidad estadio, LocalDate fecha, Integer goles1, Integer goles2, Integer penales1, Integer penales2) {
         this.id = id;
         this.seleccion1 = seleccion1;
         this.seleccion2 = seleccion2;
@@ -146,35 +134,35 @@ public class EncuentroEntidad {
         this.fecha = fecha;
     }
 
-    public int getGoles1() {
+    public Integer getGoles1() {
         return goles1;
     }
 
-    public void setGoles1(int goles1) {
+    public void setGoles1(Integer goles1) {
         this.goles1 = goles1;
     }
 
-    public int getGoles2() {
+    public Integer getGoles2() {
         return goles2;
     }
 
-    public void setGoles2(int goles2) {
+    public void setGoles2(Integer goles2) {
         this.goles2 = goles2;
     }
 
-    public int getPenales1() {
+    public Integer getPenales1() {
         return penales1;
     }
 
-    public void setPenales1(int penales1) {
+    public void setPenales1(Integer penales1) {
         this.penales1 = penales1;
     }
 
-    public int getPenales2() {
+    public Integer getPenales2() {
         return penales2;
     }
 
-    public void setPenales2(int penales2) {
+    public void setPenales2(Integer penales2) {
         this.penales2 = penales2;
     }
 }

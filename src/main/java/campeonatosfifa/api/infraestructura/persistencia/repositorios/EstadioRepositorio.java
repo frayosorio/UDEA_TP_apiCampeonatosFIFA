@@ -5,6 +5,7 @@ import campeonatosfifa.api.dominio.entidades.Estadio;
 import campeonatosfifa.api.infraestructura.persistencia.entidades.EstadioEntidad;
 import campeonatosfifa.api.infraestructura.persistencia.mapeadores.EstadioMapeador;
 import campeonatosfifa.api.infraestructura.persistencia.repositorios.jpa.IEstadioRepositorioJpa;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @Component
 public class EstadioRepositorio implements IEstadioRepositorio {
 
+    @Autowired
     private IEstadioRepositorioJpa repositorio;
 
     @Override
