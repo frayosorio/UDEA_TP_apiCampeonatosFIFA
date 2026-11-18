@@ -10,7 +10,6 @@ import campeonatosfifa.api.core.repositorios.*;
 import campeonatosfifa.api.core.servicios.*;
 import campeonatosfifa.api.dominio.entidades.*;
 import campeonatosfifa.api.dominio.dtos.*;
-import campeonatosfifa.api.aplicacion.seguridad.*;
 
 @Service
 public class UsuarioServicio implements IUsuarioServicio {
@@ -18,16 +17,10 @@ public class UsuarioServicio implements IUsuarioServicio {
     @Autowired
     private IUsuarioRepositorio repositorio;
 
-    @Autowired
-    private SeguridadServicio servicioSeguridad;
-
     @Override
     public UsuarioLoginDto login(String nombreUsuario, String clave) {
         Usuario usuarioObtenido = repositorio.login(nombreUsuario, clave);
         UsuarioLoginDto userLoginResponseDto = new UsuarioLoginDto(usuarioObtenido);
-        if (usuarioObtenido != null) {
-            userLoginResponseDto.setToken(servicioSeguridad.generarToken(nombreUsuario));
-        }
         return userLoginResponseDto;
     }
 
